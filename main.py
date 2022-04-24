@@ -91,10 +91,16 @@ def processUploadFiles(filename,filesize,files,update,bot,message,thread=None,jd
                              fileid,resp = client.upload_file_draft(f,progressfunc=uploadFile,args=(bot,message,originalfile,thread),tokenize=tokenize)
                              draftlist.append(resp)
                              client = draftlist
+                          if user_info['uploadtype'] == 'perfil':
+                             fileid,resp = client.upload_file_perfil(f,progressfunc=uploadFile,args=(bot,message,originalfile,thread),tokenize=tokenize)
+                             draftlist.append(resp)
                           if user_info['uploadtype'] == 'blog':
                              fileid,resp = client.upload_file_blog(f,progressfunc=uploadFile,args=(bot,message,originalfile,thread),tokenize=tokenize)
                              draftlist.append(resp)
                              client = draftlist
+                          if user_info['uploadtype'] == 'calendar':
+                             fileid,resp = client.upload_file_calendar(f,progressfunc=uploadFile,args=(bot,message,originalfile,thread),tokenize=tokenize)
+                             draftlist.append(resp)
                           iter += 1
                           if iter>=10:
                               break
@@ -407,7 +413,7 @@ def onmessage(update,bot:ObigramClient):
                    statInfo = infos.createStat(username,getUser,jdb.is_admin(username))
                    bot.editMessage(msg,statInfo)
                 except:
-                   bot.sendMessage(update.message.chat.id,f'⚠Error en el comando /zip size⚠')
+                   bot.sendMessage(update.message.chat.id,'⚠Error en el comando /zip size⚠')
                 return
         if '/acc' in msgText:
             try:
