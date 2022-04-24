@@ -11,7 +11,7 @@ Bienvenido a mi bot de descarga
 
 /start ⛩Iniciar Bot⛩
 
-/help 🆘 Tutorial
+/help 🆘Tutorial
 
 /my 👤Información 
 
