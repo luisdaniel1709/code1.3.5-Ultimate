@@ -346,7 +346,7 @@ def onmessage(update,bot:ObigramClient):
             return
 
         if '/about' in msgText:
-            bot.sendMessage(update.message.chat.id, f'🤖Bot Verción 1.3.5')
+            bot.sendMessage(update.message.chat.id, f'🤖Bot Verción 7.2.0')
             return
 
         if '/crypt' in msgText:
@@ -556,7 +556,7 @@ def onmessage(update,bot:ObigramClient):
 
         if '/start' in msgText:
             
-            msg = '🍜 Bot 1.3.5 en su version Ultra ha sido iniciado ⛩\n\n'
+            msg = '🍜 Bot 7.2.0 en su version Ultra ha sido iniciado ⛩\n\n'
             bot.editMessageText(message,msg)
         elif '/files' == msgText and user_info['cloudtype']=='moodle':
              proxy = ProxyCloud.parse(user_info['proxy'])
